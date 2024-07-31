@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_25c123fb8546d85ceb02c1a648445393 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_25c123fb8546d85ceb02c1a648445393" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_25c123fb8546d85ceb02c1a648445393 = L.map(
+                "map_25c123fb8546d85ceb02c1a648445393",
+                {
+                    center: [-23.5547446, -46.52904239999999],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_f836aec179513628711a7f3ec87e5384 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_f836aec179513628711a7f3ec87e5384.addTo(map_25c123fb8546d85ceb02c1a648445393);
+        
+    
+            var circle_8dcc627297febbf3b43afcc2d17f3ef8 = L.circle(
+                [-23.5547446, -46.52904239999999],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 500, "stroke": true, "weight": 3}
+            ).addTo(map_25c123fb8546d85ceb02c1a648445393);
+        
+    
+            var circle_2f3c3b2b7cc1c56704de51c7bc3ba897 = L.circle(
+                [-23.5547446, -46.52904239999999],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1000, "stroke": true, "weight": 3}
+            ).addTo(map_25c123fb8546d85ceb02c1a648445393);
+        
+    
+            var circle_72370a81fb0d69a9d327571e944483d5 = L.circle(
+                [-23.5547446, -46.52904239999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2000, "stroke": true, "weight": 3}
+            ).addTo(map_25c123fb8546d85ceb02c1a648445393);
+        
+    
+            var marker_64f0fff040e8dda380baa703091de186 = L.marker(
+                [-23.5547446, -46.52904239999999],
+                {}
+            ).addTo(map_25c123fb8546d85ceb02c1a648445393);
+        
+    
+            var icon_5590ceb0a3f4e4a908ac3d4bd85ff8a5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon glyphicon-map-marker", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_64f0fff040e8dda380baa703091de186.setIcon(icon_5590ceb0a3f4e4a908ac3d4bd85ff8a5);
+        
+    
+        var popup_764938f7d487158594cfe640c3096569 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5abe0df391d1fee58c7f3062e0066be8 = $(`<div id="html_5abe0df391d1fee58c7f3062e0066be8" style="width: 100.0%; height: 100.0%;">IPI Vila: R. Rogério Giorgi, 1871, Vila Carrão, São Paulo, SP</div>`)[0];
+                popup_764938f7d487158594cfe640c3096569.setContent(html_5abe0df391d1fee58c7f3062e0066be8);
+            
+        
+
+        marker_64f0fff040e8dda380baa703091de186.bindPopup(popup_764938f7d487158594cfe640c3096569)
+        ;
+
+        
+    
+    
+            var marker_37dee4db47f7015a2523cff39c63a0ec = L.marker(
+                [-23.5542672, -46.5360062],
+                {}
+            ).addTo(map_25c123fb8546d85ceb02c1a648445393);
+        
+    
+            var icon_13a51609229e577d730a54934bdb4cb3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon glyphicon-map-marker", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_37dee4db47f7015a2523cff39c63a0ec.setIcon(icon_13a51609229e577d730a54934bdb4cb3);
+        
+    
+        var popup_048dd18ba1911de7e906a6165e21c5f5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0d5cdf844ab9d90a856d2fc680724770 = $(`<div id="html_0d5cdf844ab9d90a856d2fc680724770" style="width: 100.0%; height: 100.0%;">Escola Estadual Julia Amalia: R. Luís Pinto, 92 - Vila Carrão, São Paulo, SP</div>`)[0];
+                popup_048dd18ba1911de7e906a6165e21c5f5.setContent(html_0d5cdf844ab9d90a856d2fc680724770);
+            
+        
+
+        marker_37dee4db47f7015a2523cff39c63a0ec.bindPopup(popup_048dd18ba1911de7e906a6165e21c5f5)
+        ;
+
+        
+    
+    
+            var marker_7721a2ff0698b6bcd2d56ae086c4e0b0 = L.marker(
+                [-23.5600487, -46.5280451],
+                {}
+            ).addTo(map_25c123fb8546d85ceb02c1a648445393);
+        
+    
+            var icon_d1a76e147e2c7dd221027fd270fc6a52 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon glyphicon-map-marker", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_7721a2ff0698b6bcd2d56ae086c4e0b0.setIcon(icon_d1a76e147e2c7dd221027fd270fc6a52);
+        
+    
+        var popup_15570534ca8624cc082f3a436ecf4726 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9c10f2edd59f15c6ff62af12718d18ba = $(`<div id="html_9c10f2edd59f15c6ff62af12718d18ba" style="width: 100.0%; height: 100.0%;">Escola Estadual Jaime Cortesão: R. Jorge Washington, 53 - Vila Carrão, São Paulo, SP</div>`)[0];
+                popup_15570534ca8624cc082f3a436ecf4726.setContent(html_9c10f2edd59f15c6ff62af12718d18ba);
+            
+        
+
+        marker_7721a2ff0698b6bcd2d56ae086c4e0b0.bindPopup(popup_15570534ca8624cc082f3a436ecf4726)
+        ;
+
+        
+    
+    
+            var marker_b1bb356e9e5969b2737a11d1177d08c0 = L.marker(
+                [-23.5484599, -46.5454177],
+                {}
+            ).addTo(map_25c123fb8546d85ceb02c1a648445393);
+        
+    
+            var icon_0ad2b0cd72defe5b8bc8b46cf58a1ad0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon glyphicon-map-marker", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_b1bb356e9e5969b2737a11d1177d08c0.setIcon(icon_0ad2b0cd72defe5b8bc8b46cf58a1ad0);
+        
+    
+        var popup_398dd8eaa5339dad211adf26939e9973 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_261d11c500547cc349f4d3acee920a4d = $(`<div id="html_261d11c500547cc349f4d3acee920a4d" style="width: 100.0%; height: 100.0%;">Escola Estadual Salvador Rocco: R. Renato Rinaldi, 31 - Vila Carrão, São Paulo, SP</div>`)[0];
+                popup_398dd8eaa5339dad211adf26939e9973.setContent(html_261d11c500547cc349f4d3acee920a4d);
+            
+        
+
+        marker_b1bb356e9e5969b2737a11d1177d08c0.bindPopup(popup_398dd8eaa5339dad211adf26939e9973)
+        ;
+
+        
+    
+    
+            var marker_c6f83b383d1c1b62c670801fb90706a4 = L.marker(
+                [-23.5550008, -46.5225655],
+                {}
+            ).addTo(map_25c123fb8546d85ceb02c1a648445393);
+        
+    
+            var icon_0749e61f50a96b34d9e450a63f4239e5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon glyphicon-map-marker", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_c6f83b383d1c1b62c670801fb90706a4.setIcon(icon_0749e61f50a96b34d9e450a63f4239e5);
+        
+    
+        var popup_62606237a17ce9a2b21d49fc290ec638 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_01972cd88ee18c77c0f5a0413a4ac476 = $(`<div id="html_01972cd88ee18c77c0f5a0413a4ac476" style="width: 100.0%; height: 100.0%;">EE Professora Irene Ribeiro: R. Cel. Amaro Sobrinho, 303 - Vila Carrão, São Paulo - SP</div>`)[0];
+                popup_62606237a17ce9a2b21d49fc290ec638.setContent(html_01972cd88ee18c77c0f5a0413a4ac476);
+            
+        
+
+        marker_c6f83b383d1c1b62c670801fb90706a4.bindPopup(popup_62606237a17ce9a2b21d49fc290ec638)
+        ;
+
+        
+    
+    
+            var marker_0295c6417221c755617d3d8aa913585d = L.marker(
+                [-23.5458883, -46.5402978],
+                {}
+            ).addTo(map_25c123fb8546d85ceb02c1a648445393);
+        
+    
+            var icon_93483fcac6116bad4486e9163edd5261 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon glyphicon-map-marker", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_0295c6417221c755617d3d8aa913585d.setIcon(icon_93483fcac6116bad4486e9163edd5261);
+        
+    
+        var popup_8bfe08cf32362b9378c7222124beceb3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_503b584dce5ed386446a1c80705f616c = $(`<div id="html_503b584dce5ed386446a1c80705f616c" style="width: 100.0%; height: 100.0%;">Escola Estadual Coronel : R. Lucinda Gomes Barreto, 605 - Vila Nova Manchester, São Paulo - SP, 03440-040</div>`)[0];
+                popup_8bfe08cf32362b9378c7222124beceb3.setContent(html_503b584dce5ed386446a1c80705f616c);
+            
+        
+
+        marker_0295c6417221c755617d3d8aa913585d.bindPopup(popup_8bfe08cf32362b9378c7222124beceb3)
+        ;
+
+        
+    
+    
+            var marker_95f5dd9ea6f03ac3b6c600c6ae6966f4 = L.marker(
+                [-23.5578481, -46.5413778],
+                {}
+            ).addTo(map_25c123fb8546d85ceb02c1a648445393);
+        
+    
+            var icon_2e26711c00d5f1aceb3dc0db6d75df00 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon glyphicon-map-marker", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_95f5dd9ea6f03ac3b6c600c6ae6966f4.setIcon(icon_2e26711c00d5f1aceb3dc0db6d75df00);
+        
+    
+        var popup_eda523271a1370241f7cbd2e6d16ad25 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_454d8d38488946189b26d5fb8e70e6bf = $(`<div id="html_454d8d38488946189b26d5fb8e70e6bf" style="width: 100.0%; height: 100.0%;">EMEi Alberto Mesquita: Praça Barão Homem de Melo, S/N - Vila Carrão, São Paulo - SP</div>`)[0];
+                popup_eda523271a1370241f7cbd2e6d16ad25.setContent(html_454d8d38488946189b26d5fb8e70e6bf);
+            
+        
+
+        marker_95f5dd9ea6f03ac3b6c600c6ae6966f4.bindPopup(popup_eda523271a1370241f7cbd2e6d16ad25)
+        ;
+
+        
+    
+    
+            var marker_a05122f49e2e6e2dc5b17bc98a0e5328 = L.marker(
+                [-23.5477427, -46.5340192],
+                {}
+            ).addTo(map_25c123fb8546d85ceb02c1a648445393);
+        
+    
+            var icon_9ab835f4494c72ec093e64115a9f3557 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon glyphicon-map-marker", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_a05122f49e2e6e2dc5b17bc98a0e5328.setIcon(icon_9ab835f4494c72ec093e64115a9f3557);
+        
+    
+        var popup_08c4a633a2ac455c0e9c20b7127ec2e8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9dd7c95b38f4b3725b84effbcd9b73f7 = $(`<div id="html_9dd7c95b38f4b3725b84effbcd9b73f7" style="width: 100.0%; height: 100.0%;">EMEI Suzana Evangelina : Praça Haroldo Daltro, S/N - Vila Nova Manchester, São Paulo - SP, 03444-090</div>`)[0];
+                popup_08c4a633a2ac455c0e9c20b7127ec2e8.setContent(html_9dd7c95b38f4b3725b84effbcd9b73f7);
+            
+        
+
+        marker_a05122f49e2e6e2dc5b17bc98a0e5328.bindPopup(popup_08c4a633a2ac455c0e9c20b7127ec2e8)
+        ;
+
+        
+    
+    
+            var marker_f89632dc4e683b89caf46ad180157e96 = L.marker(
+                [-23.5585156, -46.5296068],
+                {}
+            ).addTo(map_25c123fb8546d85ceb02c1a648445393);
+        
+    
+            var icon_076fed0767020e72b31fd7c10fca6233 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon glyphicon-map-marker", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_f89632dc4e683b89caf46ad180157e96.setIcon(icon_076fed0767020e72b31fd7c10fca6233);
+        
+    
+        var popup_490167c06da6985599668b66a18fc87d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3f635a3e529184c3a41bac5044c2b999 = $(`<div id="html_3f635a3e529184c3a41bac5044c2b999" style="width: 100.0%; height: 100.0%;">Creche Santa Rita: Rua Pedro Voss, 552 - Vila Carrão, São Paulo - SP, 03437-000</div>`)[0];
+                popup_490167c06da6985599668b66a18fc87d.setContent(html_3f635a3e529184c3a41bac5044c2b999);
+            
+        
+
+        marker_f89632dc4e683b89caf46ad180157e96.bindPopup(popup_490167c06da6985599668b66a18fc87d)
+        ;
+
+        
+    
+    
+            var marker_4d5d5b4df51fcf4e32f79e5b8f2840f5 = L.marker(
+                [-23.5516174, -46.5284665],
+                {}
+            ).addTo(map_25c123fb8546d85ceb02c1a648445393);
+        
+    
+            var icon_6e1431a99bb39c5157902c915fd7d155 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon glyphicon-map-marker", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_4d5d5b4df51fcf4e32f79e5b8f2840f5.setIcon(icon_6e1431a99bb39c5157902c915fd7d155);
+        
+    
+        var popup_e3216f5b3879047b1eb9b9fb8edb6e8d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f2e13e3d3745cb5882e5d91e665722f8 = $(`<div id="html_f2e13e3d3745cb5882e5d91e665722f8" style="width: 100.0%; height: 100.0%;">CEI Cantinho da Laurinha: Praça Aurélio Lombardi, 63 - Vila Carrão, São Paulo - SP, 03445-060</div>`)[0];
+                popup_e3216f5b3879047b1eb9b9fb8edb6e8d.setContent(html_f2e13e3d3745cb5882e5d91e665722f8);
+            
+        
+
+        marker_4d5d5b4df51fcf4e32f79e5b8f2840f5.bindPopup(popup_e3216f5b3879047b1eb9b9fb8edb6e8d)
+        ;
+
+        
+    
+    
+            var marker_61fe839a98feef46b0629a0935805abe = L.marker(
+                [-23.5561972, -46.5306629],
+                {}
+            ).addTo(map_25c123fb8546d85ceb02c1a648445393);
+        
+    
+            var icon_f2ac2ba44274490a1bad8565fcd55829 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon glyphicon-map-marker", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_61fe839a98feef46b0629a0935805abe.setIcon(icon_f2ac2ba44274490a1bad8565fcd55829);
+        
+    
+        var popup_1b089e6ffcc04e7385ff1badf73d128c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_02e35c8daccf05cfad3f21b21073f1b9 = $(`<div id="html_02e35c8daccf05cfad3f21b21073f1b9" style="width: 100.0%; height: 100.0%;">Instituto MA MA União : R. João Vieira Prioste, 1815 - Vila Carrão, São Paulo - SP, 03429-000</div>`)[0];
+                popup_1b089e6ffcc04e7385ff1badf73d128c.setContent(html_02e35c8daccf05cfad3f21b21073f1b9);
+            
+        
+
+        marker_61fe839a98feef46b0629a0935805abe.bindPopup(popup_1b089e6ffcc04e7385ff1badf73d128c)
+        ;
+
+        
+    
+    
+            var marker_209d4c603ea93a0922a89b53d2978c6a = L.marker(
+                [-23.5455633, -46.53088169999999],
+                {}
+            ).addTo(map_25c123fb8546d85ceb02c1a648445393);
+        
+    
+            var icon_83b2411c0d27486768cd0239848ce5e8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon glyphicon-map-marker", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_209d4c603ea93a0922a89b53d2978c6a.setIcon(icon_83b2411c0d27486768cd0239848ce5e8);
+        
+    
+        var popup_8d3b9dda04acc938fde7b7665dd7e94f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b4da07b22dad1a855185e1c15e1ca787 = $(`<div id="html_b4da07b22dad1a855185e1c15e1ca787" style="width: 100.0%; height: 100.0%;">CEI Espaço da Comunidade : R. Tamaindé, 1233 - Vila Carrão, São Paulo - SP, 03444-000</div>`)[0];
+                popup_8d3b9dda04acc938fde7b7665dd7e94f.setContent(html_b4da07b22dad1a855185e1c15e1ca787);
+            
+        
+
+        marker_209d4c603ea93a0922a89b53d2978c6a.bindPopup(popup_8d3b9dda04acc938fde7b7665dd7e94f)
+        ;
+
+        
+    
+    
+            var marker_ba65b0d0185778dd60b50c93017ab0be = L.marker(
+                [-23.5497494, -46.5457372],
+                {}
+            ).addTo(map_25c123fb8546d85ceb02c1a648445393);
+        
+    
+            var icon_11bfbda459fb049035c14c699c665b16 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon glyphicon-map-marker", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_ba65b0d0185778dd60b50c93017ab0be.setIcon(icon_11bfbda459fb049035c14c699c665b16);
+        
+    
+        var popup_72e57aaf4275d4f368b2783c18d20748 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c735e13870d71d6452e4645041ecc38b = $(`<div id="html_c735e13870d71d6452e4645041ecc38b" style="width: 100.0%; height: 100.0%;">CEI Joanna de Angelis: R. João Vieira Prioste, 106 - Vila Carrão, São Paulo - SP, 03429-000</div>`)[0];
+                popup_72e57aaf4275d4f368b2783c18d20748.setContent(html_c735e13870d71d6452e4645041ecc38b);
+            
+        
+
+        marker_ba65b0d0185778dd60b50c93017ab0be.bindPopup(popup_72e57aaf4275d4f368b2783c18d20748)
+        ;
+
+        
+    
+    
+            var marker_bd4ff366782f9bc8542d697c32a0ac35 = L.marker(
+                [-23.5369671, -46.556029],
+                {}
+            ).addTo(map_25c123fb8546d85ceb02c1a648445393);
+        
+    
+            var icon_7655332ff6067d10271df4a5fa621132 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon glyphicon-map-marker", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_bd4ff366782f9bc8542d697c32a0ac35.setIcon(icon_7655332ff6067d10271df4a5fa621132);
+        
+    
+        var popup_b0c8fde0d74f40f12fc8694ccb4e8d4b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_56b5a9a499f2ddf1e7777fc4e256a7e7 = $(`<div id="html_56b5a9a499f2ddf1e7777fc4e256a7e7" style="width: 100.0%; height: 100.0%;">CEI Indir Carrão II: Av. Conselheiro Carrão, 143 - Vila Carrão, São Paulo - SP, 03403-000</div>`)[0];
+                popup_b0c8fde0d74f40f12fc8694ccb4e8d4b.setContent(html_56b5a9a499f2ddf1e7777fc4e256a7e7);
+            
+        
+
+        marker_bd4ff366782f9bc8542d697c32a0ac35.bindPopup(popup_b0c8fde0d74f40f12fc8694ccb4e8d4b)
+        ;
+
+        
+    
+    
+            var marker_4a093e39e1822e9b03a826eb142cacd5 = L.marker(
+                [-23.5568131, -46.5398146],
+                {}
+            ).addTo(map_25c123fb8546d85ceb02c1a648445393);
+        
+    
+            var icon_33c8441450ddbf39bff2412e676bf960 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon glyphicon-map-marker", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_4a093e39e1822e9b03a826eb142cacd5.setIcon(icon_33c8441450ddbf39bff2412e676bf960);
+        
+    
+        var popup_92a505a7a4b10ee5620be05193897856 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_31e1152fa683c0406ac5e717a36f6f80 = $(`<div id="html_31e1152fa683c0406ac5e717a36f6f80" style="width: 100.0%; height: 100.0%;">Colegio Exatus: Rua Geraldo Correia, 343 - Vila Carrão, São Paulo - SP, 03425-020</div>`)[0];
+                popup_92a505a7a4b10ee5620be05193897856.setContent(html_31e1152fa683c0406ac5e717a36f6f80);
+            
+        
+
+        marker_4a093e39e1822e9b03a826eb142cacd5.bindPopup(popup_92a505a7a4b10ee5620be05193897856)
+        ;
+
+        
+    
+    
+            var marker_00bd6482336deb9edb65d4577a621477 = L.marker(
+                [-23.5558985, -46.5287423],
+                {}
+            ).addTo(map_25c123fb8546d85ceb02c1a648445393);
+        
+    
+            var icon_9bd12c0e3fdb37df1fa6e3720a14298c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon glyphicon-map-marker", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_00bd6482336deb9edb65d4577a621477.setIcon(icon_9bd12c0e3fdb37df1fa6e3720a14298c);
+        
+    
+        var popup_2e457c70fad0d02be50e3d5fa6e4c87b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bdd6bf6224272f4cbb2682ebd98132c6 = $(`<div id="html_bdd6bf6224272f4cbb2682ebd98132c6" style="width: 100.0%; height: 100.0%;">Colegio Miyagui: R. Francisca de Paula, 251 - Vila Carrão, São Paulo - SP, 03436-000</div>`)[0];
+                popup_2e457c70fad0d02be50e3d5fa6e4c87b.setContent(html_bdd6bf6224272f4cbb2682ebd98132c6);
+            
+        
+
+        marker_00bd6482336deb9edb65d4577a621477.bindPopup(popup_2e457c70fad0d02be50e3d5fa6e4c87b)
+        ;
+
+        
+    
+    
+            var marker_89d8486ca0688a25b79258da6a34389e = L.marker(
+                [-23.5513637, -46.5420027],
+                {}
+            ).addTo(map_25c123fb8546d85ceb02c1a648445393);
+        
+    
+            var icon_48ce8d5947c22d909d4686412c5b69f9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon glyphicon-map-marker", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_89d8486ca0688a25b79258da6a34389e.setIcon(icon_48ce8d5947c22d909d4686412c5b69f9);
+        
+    
+        var popup_c250cfec338930296c350ca96c58f97b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2e7864a5baab6ebebf947f90e596b8ab = $(`<div id="html_2e7864a5baab6ebebf947f90e596b8ab" style="width: 100.0%; height: 100.0%;">Colegio Origem: R. João Vieira Prioste, 532 - Vila Carrão, São Paulo - SP, 03429-000</div>`)[0];
+                popup_c250cfec338930296c350ca96c58f97b.setContent(html_2e7864a5baab6ebebf947f90e596b8ab);
+            
+        
+
+        marker_89d8486ca0688a25b79258da6a34389e.bindPopup(popup_c250cfec338930296c350ca96c58f97b)
+        ;
+
+        
+    
+    
+            var marker_efb5c8cf8d038823a12fec4e2406759e = L.marker(
+                [-23.5497159, -46.5435453],
+                {}
+            ).addTo(map_25c123fb8546d85ceb02c1a648445393);
+        
+    
+            var icon_2f37e5553aaed9c95e01ea0a9ac7c10d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon glyphicon-map-marker", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_efb5c8cf8d038823a12fec4e2406759e.setIcon(icon_2f37e5553aaed9c95e01ea0a9ac7c10d);
+        
+    
+        var popup_ffe3432fcff52ee71f58a76b7c8851b9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9da1bd6ec8423509095708e41f3e3996 = $(`<div id="html_9da1bd6ec8423509095708e41f3e3996" style="width: 100.0%; height: 100.0%;">Colegio Mathese: R. Renato Rinaldi, 308 - Vila Carrão, São Paulo - SP, 03426-000</div>`)[0];
+                popup_ffe3432fcff52ee71f58a76b7c8851b9.setContent(html_9da1bd6ec8423509095708e41f3e3996);
+            
+        
+
+        marker_efb5c8cf8d038823a12fec4e2406759e.bindPopup(popup_ffe3432fcff52ee71f58a76b7c8851b9)
+        ;
+
+        
+    
+    
+            var marker_24e9397d3a0f4c463ff1072f6c870278 = L.marker(
+                [-23.5482848, -46.5424575],
+                {}
+            ).addTo(map_25c123fb8546d85ceb02c1a648445393);
+        
+    
+            var icon_98314b8b83635e86f33e609a632db5df = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon glyphicon-map-marker", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_24e9397d3a0f4c463ff1072f6c870278.setIcon(icon_98314b8b83635e86f33e609a632db5df);
+        
+    
+        var popup_b00a9fc0434cb0f9cc180866a482d777 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1e5f8175a6f70b44dc775eac5647ec09 = $(`<div id="html_1e5f8175a6f70b44dc775eac5647ec09" style="width: 100.0%; height: 100.0%;">Sesi 379 : Av. Guilherme Giorgi, 200 - Vila Carrão, São Paulo - SP, 03422-000</div>`)[0];
+                popup_b00a9fc0434cb0f9cc180866a482d777.setContent(html_1e5f8175a6f70b44dc775eac5647ec09);
+            
+        
+
+        marker_24e9397d3a0f4c463ff1072f6c870278.bindPopup(popup_b00a9fc0434cb0f9cc180866a482d777)
+        ;
+
+        
+    
+    
+            var marker_4bd0466a66370e6f736081bc029b9d0d = L.marker(
+                [-23.550308, -46.54337599999999],
+                {}
+            ).addTo(map_25c123fb8546d85ceb02c1a648445393);
+        
+    
+            var icon_7214ef8d6f1674ce897b08c0d2921885 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon glyphicon-map-marker", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_4bd0466a66370e6f736081bc029b9d0d.setIcon(icon_7214ef8d6f1674ce897b08c0d2921885);
+        
+    
+        var popup_56663ee711362a651a4f0f03895badcc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_dfffdb0c26996c6f7284c82beb41e594 = $(`<div id="html_dfffdb0c26996c6f7284c82beb41e594" style="width: 100.0%; height: 100.0%;">Colegio Santa Marina: Av. Guilherme Giorgi, 430 - Vila Carrão, São Paulo - SP, 03422-000</div>`)[0];
+                popup_56663ee711362a651a4f0f03895badcc.setContent(html_dfffdb0c26996c6f7284c82beb41e594);
+            
+        
+
+        marker_4bd0466a66370e6f736081bc029b9d0d.bindPopup(popup_56663ee711362a651a4f0f03895badcc)
+        ;
+
+        
+    
+    
+            var marker_049b5173ad9db71cd75d7f83e1e8f858 = L.marker(
+                [-23.5486877, -46.5382281],
+                {}
+            ).addTo(map_25c123fb8546d85ceb02c1a648445393);
+        
+    
+            var icon_fac498d40ed5f64b02c005bf0aa665d3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon glyphicon-map-marker", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_049b5173ad9db71cd75d7f83e1e8f858.setIcon(icon_fac498d40ed5f64b02c005bf0aa665d3);
+        
+    
+        var popup_3005ee3057413d4ca5acf2a6e89f493c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ca88d487a20ed9fada3d447743cff283 = $(`<div id="html_ca88d487a20ed9fada3d447743cff283" style="width: 100.0%; height: 100.0%;">Espaço Baby kids: Av. Conselheiro Carrão, 2424 - Vila Carrão, São Paulo - SP, 03402-002</div>`)[0];
+                popup_3005ee3057413d4ca5acf2a6e89f493c.setContent(html_ca88d487a20ed9fada3d447743cff283);
+            
+        
+
+        marker_049b5173ad9db71cd75d7f83e1e8f858.bindPopup(popup_3005ee3057413d4ca5acf2a6e89f493c)
+        ;
+
+        
+    
+    
+            var marker_04140f71cd668a9352a13f6fe09a1c49 = L.marker(
+                [-23.5493189, -46.5355292],
+                {}
+            ).addTo(map_25c123fb8546d85ceb02c1a648445393);
+        
+    
+            var icon_ab8c9fc17166fe8fb46a8ac7e8362541 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon glyphicon-map-marker", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_04140f71cd668a9352a13f6fe09a1c49.setIcon(icon_ab8c9fc17166fe8fb46a8ac7e8362541);
+        
+    
+        var popup_246bf9011781cc0391adfdcc2be58768 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_524915af04bf6896b64e340eaceb7726 = $(`<div id="html_524915af04bf6896b64e340eaceb7726" style="width: 100.0%; height: 100.0%;">Magnolias Kids: Av. Conselheiro Carrão, 2715 - Vila Carrão, São Paulo - SP, 03403-002</div>`)[0];
+                popup_246bf9011781cc0391adfdcc2be58768.setContent(html_524915af04bf6896b64e340eaceb7726);
+            
+        
+
+        marker_04140f71cd668a9352a13f6fe09a1c49.bindPopup(popup_246bf9011781cc0391adfdcc2be58768)
+        ;
+
+        
+    
+    
+            var marker_1845e2b90d7eed627a65a3f7d69bfd24 = L.marker(
+                [-23.5488926, -46.5363099],
+                {}
+            ).addTo(map_25c123fb8546d85ceb02c1a648445393);
+        
+    
+            var icon_fce8ba412251cc7a844cb6bb6856d861 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon glyphicon-map-marker", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_1845e2b90d7eed627a65a3f7d69bfd24.setIcon(icon_fce8ba412251cc7a844cb6bb6856d861);
+        
+    
+        var popup_a53a8079821c13b9d491e78a08ae597d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cbbcfb8af4ba34418da223780e35a7ab = $(`<div id="html_cbbcfb8af4ba34418da223780e35a7ab" style="width: 100.0%; height: 100.0%;">Gui Modas : Av. Conselheiro Carrão, 2617 - Vila Carrão, São Paulo - SP, 03403-002</div>`)[0];
+                popup_a53a8079821c13b9d491e78a08ae597d.setContent(html_cbbcfb8af4ba34418da223780e35a7ab);
+            
+        
+
+        marker_1845e2b90d7eed627a65a3f7d69bfd24.bindPopup(popup_a53a8079821c13b9d491e78a08ae597d)
+        ;
+
+        
+    
+    
+            var marker_6ce6a99d64da30fdce7872dd0872e1a1 = L.marker(
+                [-23.5519292, -46.5297687],
+                {}
+            ).addTo(map_25c123fb8546d85ceb02c1a648445393);
+        
+    
+            var icon_98b2cd7b28080b4172de522487506182 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon glyphicon-map-marker", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_6ce6a99d64da30fdce7872dd0872e1a1.setIcon(icon_98b2cd7b28080b4172de522487506182);
+        
+    
+        var popup_8a310ec90b431a20d1dd8dcc665d438f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bab1284fde97b137252d197bb3796336 = $(`<div id="html_bab1284fde97b137252d197bb3796336" style="width: 100.0%; height: 100.0%;">Sandra Kids: Av. Conselheiro Carrão, 3371 - Vila Carrão, São Paulo - SP, 03403-003</div>`)[0];
+                popup_8a310ec90b431a20d1dd8dcc665d438f.setContent(html_bab1284fde97b137252d197bb3796336);
+            
+        
+
+        marker_6ce6a99d64da30fdce7872dd0872e1a1.bindPopup(popup_8a310ec90b431a20d1dd8dcc665d438f)
+        ;
+
+        
+    
+    
+            var marker_b77a1d0b25bebd7bfa2afa6fa98adf33 = L.marker(
+                [-23.5478653, -46.5388548],
+                {}
+            ).addTo(map_25c123fb8546d85ceb02c1a648445393);
+        
+    
+            var icon_a543a43c83f1447b14d7663d7087b7c0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon glyphicon-map-marker", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_b77a1d0b25bebd7bfa2afa6fa98adf33.setIcon(icon_a543a43c83f1447b14d7663d7087b7c0);
+        
+    
+        var popup_b849a0816098c5e2d79b7a846820f67c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_06212c8a51d39c625ca9725f1d4c3fc6 = $(`<div id="html_06212c8a51d39c625ca9725f1d4c3fc6" style="width: 100.0%; height: 100.0%;">Mirai Kids: Av. Conselheiro Carrão, 2335 - Vila Carrão, São Paulo - SP, 03403-002</div>`)[0];
+                popup_b849a0816098c5e2d79b7a846820f67c.setContent(html_06212c8a51d39c625ca9725f1d4c3fc6);
+            
+        
+
+        marker_b77a1d0b25bebd7bfa2afa6fa98adf33.bindPopup(popup_b849a0816098c5e2d79b7a846820f67c)
+        ;
+
+        
+    
+    
+            var marker_c604a3ed26e578d6d0cba13ae7bdbe98 = L.marker(
+                [-23.5557849, -46.5291068],
+                {}
+            ).addTo(map_25c123fb8546d85ceb02c1a648445393);
+        
+    
+            var icon_f9f9f0a94c56452f3c12e7961217a922 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon glyphicon-map-marker", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_c604a3ed26e578d6d0cba13ae7bdbe98.setIcon(icon_f9f9f0a94c56452f3c12e7961217a922);
+        
+    
+        var popup_f9875d071f875987bf31a717d2a8c684 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9a9cf87753cf5157368068105e37ffda = $(`<div id="html_9a9cf87753cf5157368068105e37ffda" style="width: 100.0%; height: 100.0%;">MA Cantinho da Moda Infantil : R. Francisca de Paula, 250 - Vila Carrão, São Paulo - SP, 03436-000</div>`)[0];
+                popup_f9875d071f875987bf31a717d2a8c684.setContent(html_9a9cf87753cf5157368068105e37ffda);
+            
+        
+
+        marker_c604a3ed26e578d6d0cba13ae7bdbe98.bindPopup(popup_f9875d071f875987bf31a717d2a8c684)
+        ;
+
+        
+    
+    
+            var marker_3c20f9270dd6f942126af13357a32287 = L.marker(
+                [-23.5366999, -46.5554906],
+                {}
+            ).addTo(map_25c123fb8546d85ceb02c1a648445393);
+        
+    
+            var icon_325d7945a0f172b87e80e49c6c4bc5e6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon glyphicon-map-marker", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_3c20f9270dd6f942126af13357a32287.setIcon(icon_325d7945a0f172b87e80e49c6c4bc5e6);
+        
+    
+        var popup_910133b68dfdcaba2c8b73103acfb06d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cb0ee0e8a3023eabd23a9fe9fc454910 = $(`<div id="html_cb0ee0e8a3023eabd23a9fe9fc454910" style="width: 100.0%; height: 100.0%;">Loja Mais Brinquedos : Rua Raqueta Provensano, 52 Vila Carrão, São Paulo - SP, 03404-030</div>`)[0];
+                popup_910133b68dfdcaba2c8b73103acfb06d.setContent(html_cb0ee0e8a3023eabd23a9fe9fc454910);
+            
+        
+
+        marker_3c20f9270dd6f942126af13357a32287.bindPopup(popup_910133b68dfdcaba2c8b73103acfb06d)
+        ;
+
+        
+    
+    
+            var marker_5373939f3db617d46067c6a973d94cfc = L.marker(
+                [-23.5611016, -46.5322663],
+                {}
+            ).addTo(map_25c123fb8546d85ceb02c1a648445393);
+        
+    
+            var icon_27b1a1bb254c919a1c4628b3bafc9b96 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon glyphicon-map-marker", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_5373939f3db617d46067c6a973d94cfc.setIcon(icon_27b1a1bb254c919a1c4628b3bafc9b96);
+        
+    
+        var popup_e93633378b3b416febd3c1ff7df82778 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c919566a4570c899ff8eaa4b19a88317 = $(`<div id="html_c919566a4570c899ff8eaa4b19a88317" style="width: 100.0%; height: 100.0%;">D Play Brinquedos: R. Francisca de Paula, 976 - Vila Carrão, São Paulo - SP, 03436-000</div>`)[0];
+                popup_e93633378b3b416febd3c1ff7df82778.setContent(html_c919566a4570c899ff8eaa4b19a88317);
+            
+        
+
+        marker_5373939f3db617d46067c6a973d94cfc.bindPopup(popup_e93633378b3b416febd3c1ff7df82778)
+        ;
+
+        
+    
+    
+            var marker_e1232ef68c1dab410564b54a00f93f59 = L.marker(
+                [-23.5587276, -46.54428610000001],
+                {}
+            ).addTo(map_25c123fb8546d85ceb02c1a648445393);
+        
+    
+            var icon_8f5e70709b94fc8a2056a039a8f1abbe = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon glyphicon-map-marker", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_e1232ef68c1dab410564b54a00f93f59.setIcon(icon_8f5e70709b94fc8a2056a039a8f1abbe);
+        
+    
+        var popup_699e74d67de6041b52aa518f2c4d0e3e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_528a96b26479d115a0834927725b3748 = $(`<div id="html_528a96b26479d115a0834927725b3748" style="width: 100.0%; height: 100.0%;">Petit Marengo Vila Carrão: Av. Guilherme Giorgi, 1412 - Vila Carrão, São Paulo - SP, 03422-001</div>`)[0];
+                popup_699e74d67de6041b52aa518f2c4d0e3e.setContent(html_528a96b26479d115a0834927725b3748);
+            
+        
+
+        marker_e1232ef68c1dab410564b54a00f93f59.bindPopup(popup_699e74d67de6041b52aa518f2c4d0e3e)
+        ;
+
+        
+    
+    
+            var marker_ee3e803387837e0c85a0c0cbc45631a3 = L.marker(
+                [-23.5527664, -46.5468612],
+                {}
+            ).addTo(map_25c123fb8546d85ceb02c1a648445393);
+        
+    
+            var icon_f885ccf1ba63437043a8601204cc3877 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon glyphicon-map-marker", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_ee3e803387837e0c85a0c0cbc45631a3.setIcon(icon_f885ccf1ba63437043a8601204cc3877);
+        
+    
+        var popup_209a6f49c1d54f1585d4fbf796c760bc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f45b3ed459ccd18af21071c788845ca9 = $(`<div id="html_f45b3ed459ccd18af21071c788845ca9" style="width: 100.0%; height: 100.0%;">Paes e Doces Beth Mania: R. Dentista Barreto, 1281 - Vila Carrão, São Paulo - SP, 03420-000</div>`)[0];
+                popup_209a6f49c1d54f1585d4fbf796c760bc.setContent(html_f45b3ed459ccd18af21071c788845ca9);
+            
+        
+
+        marker_ee3e803387837e0c85a0c0cbc45631a3.bindPopup(popup_209a6f49c1d54f1585d4fbf796c760bc)
+        ;
+
+        
+    
+    
+            var marker_fb3e877b0a78f0c3acc8e0ab17ed8767 = L.marker(
+                [-23.548862, -46.5366329],
+                {}
+            ).addTo(map_25c123fb8546d85ceb02c1a648445393);
+        
+    
+            var icon_08157e3cf61da4835bdab04efb34d33a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon glyphicon-map-marker", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_fb3e877b0a78f0c3acc8e0ab17ed8767.setIcon(icon_08157e3cf61da4835bdab04efb34d33a);
+        
+    
+        var popup_fcec6c0e1032566128bd1025245f15fa = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e006b15b23bfb44e8b3a2609e3bcbe0f = $(`<div id="html_e006b15b23bfb44e8b3a2609e3bcbe0f" style="width: 100.0%; height: 100.0%;">Casa Lima Padaria: Av. Conselheiro Carrão, 2589 - Vila Carrão, São Paulo - SP, 03403-002</div>`)[0];
+                popup_fcec6c0e1032566128bd1025245f15fa.setContent(html_e006b15b23bfb44e8b3a2609e3bcbe0f);
+            
+        
+
+        marker_fb3e877b0a78f0c3acc8e0ab17ed8767.bindPopup(popup_fcec6c0e1032566128bd1025245f15fa)
+        ;
+
+        
+    
+    
+            var marker_c70c3330e79e8dde325cf24b49f6d3e6 = L.marker(
+                [-23.5490224, -46.5422453],
+                {}
+            ).addTo(map_25c123fb8546d85ceb02c1a648445393);
+        
+    
+            var icon_c61ce9547eb793a04c95f6c819fe0def = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon glyphicon-map-marker", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_c70c3330e79e8dde325cf24b49f6d3e6.setIcon(icon_c61ce9547eb793a04c95f6c819fe0def);
+        
+    
+        var popup_714d491d567c14ed4c37ba4b02b74704 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b552437bf315234a1f179fcffd5003c5 = $(`<div id="html_b552437bf315234a1f179fcffd5003c5" style="width: 100.0%; height: 100.0%;">Padaria Guilherme Giorgi : Av. Guilherme Giorgi, 251 - Vila Carrão, São Paulo - SP, 03422-000</div>`)[0];
+                popup_714d491d567c14ed4c37ba4b02b74704.setContent(html_b552437bf315234a1f179fcffd5003c5);
+            
+        
+
+        marker_c70c3330e79e8dde325cf24b49f6d3e6.bindPopup(popup_714d491d567c14ed4c37ba4b02b74704)
+        ;
+
+        
+    
+    
+            var marker_1b8bc1eee2a76293c7257010de17b031 = L.marker(
+                [-23.5499056, -46.5342637],
+                {}
+            ).addTo(map_25c123fb8546d85ceb02c1a648445393);
+        
+    
+            var icon_ef055a94b435c28d0888b54d10c0bee4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon glyphicon-map-marker", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_1b8bc1eee2a76293c7257010de17b031.setIcon(icon_ef055a94b435c28d0888b54d10c0bee4);
+        
+    
+        var popup_60507a96bb2e1c858266a9ab7093df57 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_aa5e987b4995e99051ca19fa8b299a33 = $(`<div id="html_aa5e987b4995e99051ca19fa8b299a33" style="width: 100.0%; height: 100.0%;">Padaria Polipan: Av. Conselheiro Carrão, 2849 - Vila Carrão, São Paulo - SP, 03403-003</div>`)[0];
+                popup_60507a96bb2e1c858266a9ab7093df57.setContent(html_aa5e987b4995e99051ca19fa8b299a33);
+            
+        
+
+        marker_1b8bc1eee2a76293c7257010de17b031.bindPopup(popup_60507a96bb2e1c858266a9ab7093df57)
+        ;
+
+        
+    
+</script>
+</html>
